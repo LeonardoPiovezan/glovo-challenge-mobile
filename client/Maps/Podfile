@@ -7,6 +7,10 @@ target 'Maps' do
 
   # Pods for Maps
   pod 'Swinject'
+  pod 'SnapKit'
+  pod 'Moya/RxSwift'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
   target 'MapsTests' do
     inherit! :search_paths
