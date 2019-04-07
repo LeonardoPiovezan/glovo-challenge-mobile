@@ -6,6 +6,7 @@ target 'Maps' do
   use_frameworks!
 
   # Pods for Maps
+  pod 'Swinject'
 
   target 'MapsTests' do
     inherit! :search_paths
