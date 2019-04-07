@@ -17,6 +17,7 @@
 		1AA98E0F225AA54A00F22286 /* DefaultContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E0E225AA54A00F22286 /* DefaultContainer.swift */; };
 		1AA98E12225AA7FF00F22286 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E11225AA7FF00F22286 /* MapView.swift */; };
 		1AA98E14225AA8A600F22286 /* DefaultContainer+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E13225AA8A600F22286 /* DefaultContainer+Views.swift */; };
+		1AA98E17225AB02200F22286 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1AA98E16225AB02200F22286 /* .swiftlint.yml */; };
 		69511AF44C6DB325121AF196 /* Pods_MapsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CBE6D8DD2BD5897571B94B /* Pods_MapsUITests.framework */; };
 		9D056CC1F5C5225C03CC4017 /* Pods_Maps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4655AF3C375BEC380B6190C7 /* Pods_Maps.framework */; };
 		A8A64F38CA97F6EE0789E803 /* Pods_MapsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165C6F1820F5504C965A406 /* Pods_MapsTests.framework */; };
@@ -57,6 +58,7 @@
 		1AA98E0E225AA54A00F22286 /* DefaultContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultContainer.swift; sourceTree = "<group>"; };
 		1AA98E11225AA7FF00F22286 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		1AA98E13225AA8A600F22286 /* DefaultContainer+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultContainer+Views.swift"; sourceTree = "<group>"; };
+		1AA98E16225AB02200F22286 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3165C6F1820F5504C965A406 /* Pods_MapsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		403D32CDCDCB929E32080D85 /* Pods-MapsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsTests.release.xcconfig"; path = "Target Support Files/Pods-MapsTests/Pods-MapsTests.release.xcconfig"; sourceTree = "<group>"; };
 		4655AF3C375BEC380B6190C7 /* Pods_Maps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 		1AA98DC7225A988B00F22286 = {
 			isa = PBXGroup;
 			children = (
+				1AA98E16225AB02200F22286 /* .swiftlint.yml */,
 				1AA98DD2225A988B00F22286 /* Maps */,
 				1AA98DE7225A988D00F22286 /* MapsTests */,
 				1AA98DF2225A988D00F22286 /* MapsUITests */,
@@ -250,6 +253,7 @@
 				1AA98DCD225A988B00F22286 /* Frameworks */,
 				1AA98DCE225A988B00F22286 /* Resources */,
 				C7DE4B4D96BB7B9222755E27 /* [CP] Embed Pods Frameworks */,
+				1AA98E15225AAF1300F22286 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -346,6 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA98E17225AB02200F22286 /* .swiftlint.yml in Resources */,
 				1AA98DDE225A988D00F22286 /* LaunchScreen.storyboard in Resources */,
 				1AA98DDB225A988D00F22286 /* Assets.xcassets in Resources */,
 			);
@@ -368,6 +373,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1AA98E15225AAF1300F22286 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		6892C2D2793BC93608BA1E05 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

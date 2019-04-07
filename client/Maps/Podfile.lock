@@ -13,6 +13,7 @@ PODS:
   - RxSwift (4.4.2):
     - RxAtomic (>= 4.4.2, ~> 4.4)
   - SnapKit (4.2.0)
+  - SwiftLint (0.31.0)
   - Swinject (2.6.0)
 
 DEPENDENCIES:
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SnapKit
+  - SwiftLint
   - Swinject
 
 SPEC REPOS:
@@ -31,6 +33,7 @@ SPEC REPOS:
     - RxCocoa
     - RxSwift
     - SnapKit
+    - SwiftLint
     - Swinject
 
 SPEC CHECKSUMS:
@@ -41,8 +44,9 @@ SPEC CHECKSUMS:
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
 
-PODFILE CHECKSUM: 2f0828a3423ee8c733c3199f98b77c9066700884
+PODFILE CHECKSUM: 64be4f4ab4c247b0ee5b5301428b38f315826492
 
 COCOAPODS: 1.6.1
