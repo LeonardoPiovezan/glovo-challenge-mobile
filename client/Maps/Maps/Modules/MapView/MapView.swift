@@ -10,7 +10,9 @@ import UIKit
 
 class MapView: UIViewController {
 
-    init() {
+    private let service: PlaceService
+    init(service: PlaceService) {
+        self.service = service
         super.init(nibName: nil, bundle: nil)
     }
 

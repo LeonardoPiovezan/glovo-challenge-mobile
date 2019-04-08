@@ -9,10 +9,10 @@
 import Foundation
 
 extension DefaultContainer {
-
     func registerViews() {
-        self.container.register(MapView.self) { _ in
-            return MapView()
+        self.container.register(MapView.self) { resolver in
+            let service = resolver.resolve(PlaceService.self)!
+            return MapView(service: service)
         }
     }
 }

@@ -14,6 +14,8 @@ final class DefaultContainer {
 
     init() {
         self.container = Container()
+        self.registerRepositories()
+        self.registerServices()
         self.registerViews()
     }
 }

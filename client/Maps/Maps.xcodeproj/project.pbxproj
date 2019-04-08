@@ -22,6 +22,13 @@
 		1AA98E1D225AB5DC00F22286 /* PlaceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E1C225AB5DC00F22286 /* PlaceRouter.swift */; };
 		1AA98E1F225AB75000F22286 /* PlaceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E1E225AB75000F22286 /* PlaceRepository.swift */; };
 		1AA98E21225AB7EE00F22286 /* PlaceRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E20225AB7EE00F22286 /* PlaceRepositoryImpl.swift */; };
+		1AA98E25225ABF0600F22286 /* PlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E24225ABF0600F22286 /* PlaceService.swift */; };
+		1AA98E28225ABFF900F22286 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E27225ABFF900F22286 /* Country.swift */; };
+		1AA98E2A225AC00700F22286 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E29225AC00700F22286 /* City.swift */; };
+		1AA98E2C225AC0D300F22286 /* PlaceServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E2B225AC0D300F22286 /* PlaceServiceImpl.swift */; };
+		1AA98E2E225AC25400F22286 /* PlaceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E2D225AC25400F22286 /* PlaceError.swift */; };
+		1AA98E30225AC43200F22286 /* DefaultContainer+Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E2F225AC43200F22286 /* DefaultContainer+Services.swift */; };
+		1AA98E32225AC44200F22286 /* DefaultContainer+Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E31225AC44200F22286 /* DefaultContainer+Repositories.swift */; };
 		69511AF44C6DB325121AF196 /* Pods_MapsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CBE6D8DD2BD5897571B94B /* Pods_MapsUITests.framework */; };
 		9D056CC1F5C5225C03CC4017 /* Pods_Maps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4655AF3C375BEC380B6190C7 /* Pods_Maps.framework */; };
 		A8A64F38CA97F6EE0789E803 /* Pods_MapsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165C6F1820F5504C965A406 /* Pods_MapsTests.framework */; };
@@ -67,6 +74,13 @@
 		1AA98E1C225AB5DC00F22286 /* PlaceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRouter.swift; sourceTree = "<group>"; };
 		1AA98E1E225AB75000F22286 /* PlaceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRepository.swift; sourceTree = "<group>"; };
 		1AA98E20225AB7EE00F22286 /* PlaceRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRepositoryImpl.swift; sourceTree = "<group>"; };
+		1AA98E24225ABF0600F22286 /* PlaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceService.swift; sourceTree = "<group>"; };
+		1AA98E27225ABFF900F22286 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		1AA98E29225AC00700F22286 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		1AA98E2B225AC0D300F22286 /* PlaceServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceServiceImpl.swift; sourceTree = "<group>"; };
+		1AA98E2D225AC25400F22286 /* PlaceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceError.swift; sourceTree = "<group>"; };
+		1AA98E2F225AC43200F22286 /* DefaultContainer+Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultContainer+Services.swift"; sourceTree = "<group>"; };
+		1AA98E31225AC44200F22286 /* DefaultContainer+Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultContainer+Repositories.swift"; sourceTree = "<group>"; };
 		3165C6F1820F5504C965A406 /* Pods_MapsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		403D32CDCDCB929E32080D85 /* Pods-MapsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsTests.release.xcconfig"; path = "Target Support Files/Pods-MapsTests/Pods-MapsTests.release.xcconfig"; sourceTree = "<group>"; };
 		4655AF3C375BEC380B6190C7 /* Pods_Maps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +208,8 @@
 			children = (
 				1AA98E0E225AA54A00F22286 /* DefaultContainer.swift */,
 				1AA98E13225AA8A600F22286 /* DefaultContainer+Views.swift */,
+				1AA98E2F225AC43200F22286 /* DefaultContainer+Services.swift */,
+				1AA98E31225AC44200F22286 /* DefaultContainer+Repositories.swift */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -209,6 +225,8 @@
 		1AA98E08225A9C3100F22286 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				1AA98E27225ABFF900F22286 /* Country.swift */,
+				1AA98E29225AC00700F22286 /* City.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -216,6 +234,7 @@
 		1AA98E09225A9CE300F22286 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1AA98E26225ABF3100F22286 /* Places */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -242,6 +261,16 @@
 				1AA98E1C225AB5DC00F22286 /* PlaceRouter.swift */,
 				1AA98E1E225AB75000F22286 /* PlaceRepository.swift */,
 				1AA98E20225AB7EE00F22286 /* PlaceRepositoryImpl.swift */,
+				1AA98E2D225AC25400F22286 /* PlaceError.swift */,
+			);
+			path = Places;
+			sourceTree = "<group>";
+		};
+		1AA98E26225ABF3100F22286 /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				1AA98E24225ABF0600F22286 /* PlaceService.swift */,
+				1AA98E2B225AC0D300F22286 /* PlaceServiceImpl.swift */,
 			);
 			path = Places;
 			sourceTree = "<group>";
@@ -528,15 +557,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA98E2E225AC25400F22286 /* PlaceError.swift in Sources */,
+				1AA98E30225AC43200F22286 /* DefaultContainer+Services.swift in Sources */,
 				1AA98E14225AA8A600F22286 /* DefaultContainer+Views.swift in Sources */,
+				1AA98E2C225AC0D300F22286 /* PlaceServiceImpl.swift in Sources */,
 				1AA98E0D225AA4CD00F22286 /* AppCoordinator.swift in Sources */,
 				1AA98E1D225AB5DC00F22286 /* PlaceRouter.swift in Sources */,
 				1AA98E21225AB7EE00F22286 /* PlaceRepositoryImpl.swift in Sources */,
+				1AA98E32225AC44200F22286 /* DefaultContainer+Repositories.swift in Sources */,
+				1AA98E28225ABFF900F22286 /* Country.swift in Sources */,
 				1AA98E1F225AB75000F22286 /* PlaceRepository.swift in Sources */,
 				1AA98E0F225AA54A00F22286 /* DefaultContainer.swift in Sources */,
 				1AA98E12225AA7FF00F22286 /* MapView.swift in Sources */,
+				1AA98E25225ABF0600F22286 /* PlaceService.swift in Sources */,
 				1AA98E1B225AB33A00F22286 /* Constants.swift in Sources */,
 				1AA98E0B225A9D5D00F22286 /* Coordinator.swift in Sources */,
+				1AA98E2A225AC00700F22286 /* City.swift in Sources */,
 				1AA98DD4225A988B00F22286 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

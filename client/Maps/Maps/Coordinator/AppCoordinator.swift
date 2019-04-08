@@ -22,7 +22,6 @@ final class AppCoordinator: Coordinator {
     func start() {
 
         let mapView = self.container.container.resolve(MapView.self)!
-
         self.window.rootViewController = mapView
     }
 }
