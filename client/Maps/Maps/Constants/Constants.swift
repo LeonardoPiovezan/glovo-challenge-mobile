@@ -12,4 +12,9 @@ struct Constants {
         private init() {}
         static let baseURL = "http://localhost:3000/api"
     }
+
+    struct Keys {
+        private init() {}
+        static let mapsKey = "AIzaSyCJGCZzXyP01KjI2JZMVZh-BAjF6F3tQEk"
+    }
 }
