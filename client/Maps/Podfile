@@ -12,7 +12,8 @@ target 'Maps' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SwiftLint'
-
+  pod 'GoogleMaps'
+  
   target 'MapsTests' do
     inherit! :search_paths
     # Pods for testing

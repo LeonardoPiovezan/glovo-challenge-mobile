@@ -29,6 +29,8 @@
 		1AA98E2E225AC25400F22286 /* PlaceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E2D225AC25400F22286 /* PlaceError.swift */; };
 		1AA98E30225AC43200F22286 /* DefaultContainer+Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E2F225AC43200F22286 /* DefaultContainer+Services.swift */; };
 		1AA98E32225AC44200F22286 /* DefaultContainer+Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E31225AC44200F22286 /* DefaultContainer+Repositories.swift */; };
+		1AA98E35225ADA0D00F22286 /* GeolocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E34225ADA0D00F22286 /* GeolocationService.swift */; };
+		1AA98E37225ADB8C00F22286 /* GeolocationServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E36225ADB8C00F22286 /* GeolocationServiceImpl.swift */; };
 		69511AF44C6DB325121AF196 /* Pods_MapsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CBE6D8DD2BD5897571B94B /* Pods_MapsUITests.framework */; };
 		9D056CC1F5C5225C03CC4017 /* Pods_Maps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4655AF3C375BEC380B6190C7 /* Pods_Maps.framework */; };
 		A8A64F38CA97F6EE0789E803 /* Pods_MapsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165C6F1820F5504C965A406 /* Pods_MapsTests.framework */; };
@@ -81,6 +83,8 @@
 		1AA98E2D225AC25400F22286 /* PlaceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceError.swift; sourceTree = "<group>"; };
 		1AA98E2F225AC43200F22286 /* DefaultContainer+Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultContainer+Services.swift"; sourceTree = "<group>"; };
 		1AA98E31225AC44200F22286 /* DefaultContainer+Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultContainer+Repositories.swift"; sourceTree = "<group>"; };
+		1AA98E34225ADA0D00F22286 /* GeolocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationService.swift; sourceTree = "<group>"; };
+		1AA98E36225ADB8C00F22286 /* GeolocationServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationServiceImpl.swift; sourceTree = "<group>"; };
 		3165C6F1820F5504C965A406 /* Pods_MapsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		403D32CDCDCB929E32080D85 /* Pods-MapsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsTests.release.xcconfig"; path = "Target Support Files/Pods-MapsTests/Pods-MapsTests.release.xcconfig"; sourceTree = "<group>"; };
 		4655AF3C375BEC380B6190C7 /* Pods_Maps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +238,7 @@
 		1AA98E09225A9CE300F22286 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1AA98E33225AD99D00F22286 /* Geolocation */,
 				1AA98E26225ABF3100F22286 /* Places */,
 			);
 			path = Services;
@@ -275,6 +280,15 @@
 			path = Places;
 			sourceTree = "<group>";
 		};
+		1AA98E33225AD99D00F22286 /* Geolocation */ = {
+			isa = PBXGroup;
+			children = (
+				1AA98E34225ADA0D00F22286 /* GeolocationService.swift */,
+				1AA98E36225ADB8C00F22286 /* GeolocationServiceImpl.swift */,
+			);
+			path = Geolocation;
+			sourceTree = "<group>";
+		};
 		45A8DBF3B3B937FB9C8632A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +325,7 @@
 				1AA98DCE225A988B00F22286 /* Resources */,
 				C7DE4B4D96BB7B9222755E27 /* [CP] Embed Pods Frameworks */,
 				1AA98E15225AAF1300F22286 /* SwiftLint */,
+				C98484CA9233FE62AD3A217C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -528,6 +543,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Maps/Pods-Maps-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C98484CA9233FE62AD3A217C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Maps/Pods-Maps-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Maps/Pods-Maps-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CEF059F074D23DDA6FE5E717 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -557,8 +594,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA98E35225ADA0D00F22286 /* GeolocationService.swift in Sources */,
 				1AA98E2E225AC25400F22286 /* PlaceError.swift in Sources */,
 				1AA98E30225AC43200F22286 /* DefaultContainer+Services.swift in Sources */,
+				1AA98E37225ADB8C00F22286 /* GeolocationServiceImpl.swift in Sources */,
 				1AA98E14225AA8A600F22286 /* DefaultContainer+Views.swift in Sources */,
 				1AA98E2C225AC0D300F22286 /* PlaceServiceImpl.swift in Sources */,
 				1AA98E0D225AA4CD00F22286 /* AppCoordinator.swift in Sources */,
