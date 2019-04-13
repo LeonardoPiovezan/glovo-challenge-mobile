@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+final class MapViewModel: MapViewModeling {
+    private let placeService: PlaceService
+
+    init(placeService: PlaceService) {
+        self.placeService = placeService
+    }
+}
