@@ -12,12 +12,12 @@ import CoreLocation
 
 class MapView: CustomViewController<MapViewScreen> {
 
-    private let service: PlaceService
     private let locationManager: CLLocationManager
-    
-    init(service: PlaceService) {
-        self.service = service
+
+    private let viewModel: MapViewModeling
+    init(mapViewModel: MapViewModeling) {
         self.locationManager = CLLocationManager()
+        self.viewModel = mapViewModel
         super.init(nibName: nil, bundle: nil)
         self.locationManager.delegate = self
     }

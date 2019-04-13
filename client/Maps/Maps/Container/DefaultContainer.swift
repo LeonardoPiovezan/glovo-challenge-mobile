@@ -16,6 +16,7 @@ final class DefaultContainer {
         self.container = Container()
         self.registerRepositories()
         self.registerServices()
+        self.registerViewModels()
         self.registerViews()
     }
 }

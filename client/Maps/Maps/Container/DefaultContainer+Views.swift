@@ -11,8 +11,8 @@ import Foundation
 extension DefaultContainer {
     func registerViews() {
         self.container.register(MapView.self) { resolver in
-            let service = resolver.resolve(PlaceService.self)!
-            return MapView(service: service)
+            let mapViewModel = resolver.resolve(MapViewModeling.self)!
+            return MapView(mapViewModel: mapViewModel)
         }
     }
 }
