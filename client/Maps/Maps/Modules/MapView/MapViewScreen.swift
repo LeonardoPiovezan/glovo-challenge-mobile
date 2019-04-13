@@ -14,8 +14,8 @@ final class MapViewScreen: UIView {
         return UIView(frame: CGRect.zero)
     }()
 
-    lazy var infoView: UIView = {
-        return UIView(frame: CGRect.zero)
+    lazy var cityInfoView: CityInfoView = {
+        return CityInfoView()
     }()
 
     init() {
@@ -31,7 +31,7 @@ final class MapViewScreen: UIView {
 extension MapViewScreen: CodeView {
     func buildViewHierarchy() {
         self.addSubview(self.mapView)
-        self.addSubview(self.infoView)
+        self.addSubview(self.cityInfoView)
     }
 
     func setupConstraints() {
@@ -41,17 +41,16 @@ extension MapViewScreen: CodeView {
             make.trailing.equalToSuperview()
         }
 
-        self.infoView.snp.makeConstraints { make in
+        self.cityInfoView.snp.makeConstraints { make in
             make.top.equalTo(self.mapView.snp.bottom)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.height.equalTo(100)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
     }
 
     func setupAdditionalConfiguration() {
         self.mapView.backgroundColor = .black
-        self.infoView.backgroundColor = .purple
+//        self.infoView.backgroundColor = .purple
     }
 }
