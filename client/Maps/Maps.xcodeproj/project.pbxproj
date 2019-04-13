@@ -31,6 +31,10 @@
 		1AA98E32225AC44200F22286 /* DefaultContainer+Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E31225AC44200F22286 /* DefaultContainer+Repositories.swift */; };
 		1AA98E35225ADA0D00F22286 /* GeolocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E34225ADA0D00F22286 /* GeolocationService.swift */; };
 		1AA98E37225ADB8C00F22286 /* GeolocationServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E36225ADB8C00F22286 /* GeolocationServiceImpl.swift */; };
+		1AA98E3922624B7900F22286 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E3822624B7900F22286 /* MapViewModel.swift */; };
+		1AA98E3B22624B9300F22286 /* MapViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E3A22624B9300F22286 /* MapViewScreen.swift */; };
+		1AA98E3D22624BC400F22286 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E3C22624BC400F22286 /* CodeView.swift */; };
+		1AA98E3F226252E000F22286 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E3E226252E000F22286 /* CustomViewController.swift */; };
 		69511AF44C6DB325121AF196 /* Pods_MapsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CBE6D8DD2BD5897571B94B /* Pods_MapsUITests.framework */; };
 		9D056CC1F5C5225C03CC4017 /* Pods_Maps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4655AF3C375BEC380B6190C7 /* Pods_Maps.framework */; };
 		A8A64F38CA97F6EE0789E803 /* Pods_MapsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165C6F1820F5504C965A406 /* Pods_MapsTests.framework */; };
@@ -85,6 +89,10 @@
 		1AA98E31225AC44200F22286 /* DefaultContainer+Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultContainer+Repositories.swift"; sourceTree = "<group>"; };
 		1AA98E34225ADA0D00F22286 /* GeolocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationService.swift; sourceTree = "<group>"; };
 		1AA98E36225ADB8C00F22286 /* GeolocationServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationServiceImpl.swift; sourceTree = "<group>"; };
+		1AA98E3822624B7900F22286 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		1AA98E3A22624B9300F22286 /* MapViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewScreen.swift; sourceTree = "<group>"; };
+		1AA98E3C22624BC400F22286 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		1AA98E3E226252E000F22286 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		3165C6F1820F5504C965A406 /* Pods_MapsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		403D32CDCDCB929E32080D85 /* Pods-MapsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsTests.release.xcconfig"; path = "Target Support Files/Pods-MapsTests/Pods-MapsTests.release.xcconfig"; sourceTree = "<group>"; };
 		4655AF3C375BEC380B6190C7 /* Pods_Maps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +211,8 @@
 		1AA98E04225A9B8100F22286 /* CodeView */ = {
 			isa = PBXGroup;
 			children = (
+				1AA98E3C22624BC400F22286 /* CodeView.swift */,
+				1AA98E3E226252E000F22286 /* CustomViewController.swift */,
 			);
 			path = CodeView;
 			sourceTree = "<group>";
@@ -248,6 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				1AA98E11225AA7FF00F22286 /* MapView.swift */,
+				1AA98E3822624B7900F22286 /* MapViewModel.swift */,
+				1AA98E3A22624B9300F22286 /* MapViewScreen.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -596,6 +608,7 @@
 			files = (
 				1AA98E35225ADA0D00F22286 /* GeolocationService.swift in Sources */,
 				1AA98E2E225AC25400F22286 /* PlaceError.swift in Sources */,
+				1AA98E3F226252E000F22286 /* CustomViewController.swift in Sources */,
 				1AA98E30225AC43200F22286 /* DefaultContainer+Services.swift in Sources */,
 				1AA98E37225ADB8C00F22286 /* GeolocationServiceImpl.swift in Sources */,
 				1AA98E14225AA8A600F22286 /* DefaultContainer+Views.swift in Sources */,
@@ -605,11 +618,14 @@
 				1AA98E21225AB7EE00F22286 /* PlaceRepositoryImpl.swift in Sources */,
 				1AA98E32225AC44200F22286 /* DefaultContainer+Repositories.swift in Sources */,
 				1AA98E28225ABFF900F22286 /* Country.swift in Sources */,
+				1AA98E3922624B7900F22286 /* MapViewModel.swift in Sources */,
 				1AA98E1F225AB75000F22286 /* PlaceRepository.swift in Sources */,
 				1AA98E0F225AA54A00F22286 /* DefaultContainer.swift in Sources */,
 				1AA98E12225AA7FF00F22286 /* MapView.swift in Sources */,
 				1AA98E25225ABF0600F22286 /* PlaceService.swift in Sources */,
 				1AA98E1B225AB33A00F22286 /* Constants.swift in Sources */,
+				1AA98E3D22624BC400F22286 /* CodeView.swift in Sources */,
+				1AA98E3B22624B9300F22286 /* MapViewScreen.swift in Sources */,
 				1AA98E0B225A9D5D00F22286 /* Coordinator.swift in Sources */,
 				1AA98E2A225AC00700F22286 /* City.swift in Sources */,
 				1AA98DD4225A988B00F22286 /* AppDelegate.swift in Sources */,
