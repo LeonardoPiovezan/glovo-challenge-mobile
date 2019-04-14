@@ -15,6 +15,11 @@ PODS:
   - RxAtomic (4.4.2)
   - RxCocoa (4.4.2):
     - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxCoreLocation (1.3.2):
+    - RxCoreLocation/Core (= 1.3.2)
+  - RxCoreLocation/Core (1.3.2):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
   - RxSwift (4.4.2):
     - RxAtomic (>= 4.4.2, ~> 4.4)
   - SnapKit (4.2.0)
@@ -25,6 +30,7 @@ DEPENDENCIES:
   - GoogleMaps
   - Moya/RxSwift
   - RxCocoa
+  - RxCoreLocation (~> 1.3.1)
   - RxSwift
   - SnapKit
   - SwiftLint
@@ -38,6 +44,7 @@ SPEC REPOS:
     - Result
     - RxAtomic
     - RxCocoa
+    - RxCoreLocation
     - RxSwift
     - SnapKit
     - SwiftLint
@@ -50,11 +57,12 @@ SPEC CHECKSUMS:
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
+  RxCoreLocation: 23d0f2f06fba5af57f2fa9064a5c165e75eb4c33
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
 
-PODFILE CHECKSUM: 3d2854c758268465d49867b341b466017fbe1eee
+PODFILE CHECKSUM: cf4cc9d8fd93d7f2fcc3729083844500fa3c3c21
 
 COCOAPODS: 1.6.1

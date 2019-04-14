@@ -12,7 +12,10 @@ extension DefaultContainer {
     func registerViewModels() {
         self.container.register(MapViewModeling.self) { resolver in
             let placeService = resolver.resolve(PlaceService.self)!
-            return MapViewModel(placeService: placeService)
+            let geolocationService = resolver.resolve(GeolocationService.self)!
+            return MapViewModel(placeService: placeService,
+                                geolocationService: geolocationService
+            )
         }
     }
 }

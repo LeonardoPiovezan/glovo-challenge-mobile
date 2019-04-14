@@ -8,28 +8,45 @@
 import RxCocoa
 import CoreLocation
 import RxSwift
+import RxCoreLocation
 
-final class GeolocationServiceImpl: NSObject, GeolocationService {
+final class GeolocationServiceImpl: GeolocationService {
     var autorized: Driver<Bool>
-    var location: Driver<CLLocationCoordinate2D>
+    var location: Driver<CLLocation>
     private let locationManager: CLLocationManager
 
-    private let locationSubject = PublishSubject<CLLocationCoordinate2D>()
-    private let autorizedSubject = PublishSubject<Bool>()
-
-    override init() {
+    init() {
         self.locationManager = CLLocationManager()
-        self.location = self.locationSubject.asDriver(onErrorJustReturn: CLLocationCoordinate2D(latitude: 0, longitude: 0))
-        self.autorized = self.autorizedSubject.asDriver(onErrorJustReturn: false)
-        super.init()
-        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
+        self.autorized = self.locationManager.rx.status.map { authorization -> Bool in
+            switch authorization {
+            case .authorizedAlways, .authorizedWhenInUse:
+                return true
+            default:
+                return false
+            }
+            }.asDriver(onErrorJustReturn: false)
+
+        self.location = self.locationManager
+            .rx
+            .location
+            .unwrap()
+            .asDriver(onErrorJustReturn: CLLocation(latitude: 0, longitude: 0))
+    }
+
+    func requestAuthorizationFromUser() {
+        self.locationManager.requestAlwaysAuthorization()
+    }
+
+    func startUpdatingLocation() {
         self.locationManager.startUpdatingLocation()
     }
-}
 
-extension GeolocationServiceImpl: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations.last!
-        self.locationSubject.onNext(location.coordinate)
+    func stopUpdatingLocation() {
+        self.locationManager.stopUpdatingLocation()
+    }
+
+    func requestLocation() {
+        self.locationManager.requestLocation()
     }
 }

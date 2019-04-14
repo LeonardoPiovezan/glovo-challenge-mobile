@@ -13,6 +13,7 @@ target 'Maps' do
   pod 'RxCocoa'
   pod 'SwiftLint'
   pod 'GoogleMaps'
+  pod 'RxCoreLocation', '~> 1.3.1'
   
   target 'MapsTests' do
     inherit! :search_paths

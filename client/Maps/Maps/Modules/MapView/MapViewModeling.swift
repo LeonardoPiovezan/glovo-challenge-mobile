@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+import CoreLocation
 
 protocol MapViewModeling {
-    
+    var location: Driver<CLLocation> { get }
 }

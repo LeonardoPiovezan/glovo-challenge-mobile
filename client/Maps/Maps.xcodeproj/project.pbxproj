@@ -45,6 +45,7 @@
 		1AA98E5422628F0600F22286 /* TitleDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E5322628F0600F22286 /* TitleDescriptor.swift */; };
 		1AA98E562262926E00F22286 /* SubtitleDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E552262926E00F22286 /* SubtitleDescriptor.swift */; };
 		1AA98E592262A45D00F22286 /* CityInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E582262A45D00F22286 /* CityInfoView.swift */; };
+		1AA98E5C2262B84700F22286 /* Observable+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E5B2262B84700F22286 /* Observable+Utils.swift */; };
 		69511AF44C6DB325121AF196 /* Pods_MapsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CBE6D8DD2BD5897571B94B /* Pods_MapsUITests.framework */; };
 		9D056CC1F5C5225C03CC4017 /* Pods_Maps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4655AF3C375BEC380B6190C7 /* Pods_Maps.framework */; };
 		A8A64F38CA97F6EE0789E803 /* Pods_MapsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165C6F1820F5504C965A406 /* Pods_MapsTests.framework */; };
@@ -113,6 +114,7 @@
 		1AA98E5322628F0600F22286 /* TitleDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptor.swift; sourceTree = "<group>"; };
 		1AA98E552262926E00F22286 /* SubtitleDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleDescriptor.swift; sourceTree = "<group>"; };
 		1AA98E582262A45D00F22286 /* CityInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoView.swift; sourceTree = "<group>"; };
+		1AA98E5B2262B84700F22286 /* Observable+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Utils.swift"; sourceTree = "<group>"; };
 		3165C6F1820F5504C965A406 /* Pods_MapsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		403D32CDCDCB929E32080D85 /* Pods-MapsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsTests.release.xcconfig"; path = "Target Support Files/Pods-MapsTests/Pods-MapsTests.release.xcconfig"; sourceTree = "<group>"; };
 		4655AF3C375BEC380B6190C7 /* Pods_Maps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +179,7 @@
 		1AA98DD2225A988B00F22286 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				1AA98E5A2262B82B00F22286 /* Extension */,
 				1AA98DD3225A988B00F22286 /* AppDelegate.swift */,
 				1AA98DDA225A988D00F22286 /* Assets.xcassets */,
 				1AA98E04225A9B8100F22286 /* CodeView */,
@@ -361,6 +364,14 @@
 				1AA98E582262A45D00F22286 /* CityInfoView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1AA98E5A2262B82B00F22286 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1AA98E5B2262B84700F22286 /* Observable+Utils.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		45A8DBF3B3B937FB9C8632A0 /* Frameworks */ = {
@@ -595,6 +606,7 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCoreLocation/RxCoreLocation.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
@@ -608,6 +620,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCoreLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
@@ -674,6 +687,7 @@
 				1AA98E30225AC43200F22286 /* DefaultContainer+Services.swift in Sources */,
 				1AA98E37225ADB8C00F22286 /* GeolocationServiceImpl.swift in Sources */,
 				1AA98E14225AA8A600F22286 /* DefaultContainer+Views.swift in Sources */,
+				1AA98E5C2262B84700F22286 /* Observable+Utils.swift in Sources */,
 				1AA98E2C225AC0D300F22286 /* PlaceServiceImpl.swift in Sources */,
 				1AA98E592262A45D00F22286 /* CityInfoView.swift in Sources */,
 				1AA98E0D225AA4CD00F22286 /* AppCoordinator.swift in Sources */,

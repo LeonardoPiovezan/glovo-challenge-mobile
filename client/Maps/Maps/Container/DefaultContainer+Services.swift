@@ -14,5 +14,9 @@ extension DefaultContainer {
             let repository = resolver.resolve(PlaceRepository.self)!
             return PlaceServiceImpl(repository: repository)
         }
+
+        self.container.register(GeolocationService.self) { _ in
+            GeolocationServiceImpl()
+        }
     }
 }

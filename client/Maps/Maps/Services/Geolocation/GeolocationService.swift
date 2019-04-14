@@ -12,5 +12,9 @@ import CoreLocation
 
 protocol GeolocationService {
     var autorized: Driver<Bool> { get }
-    var location: Driver<CLLocationCoordinate2D> { get }
+    var location: Driver<CLLocation> { get }
+    func requestAuthorizationFromUser()
+    func startUpdatingLocation()
+    func stopUpdatingLocation()
+    func requestLocation()
 }

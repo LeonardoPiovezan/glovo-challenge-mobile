@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import RxCoreLocation
 
 class MapView: CustomViewController<MapViewScreen> {
 
@@ -26,27 +27,10 @@ class MapView: CustomViewController<MapViewScreen> {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private var mapView: GMSMapView!
-//
-//    override func loadView() {
-//        self.view = MapViewScreen()
-//        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-//        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-//        view = mapView
-//
-//        // Creates a marker in the center of the map.
-//        let marker = GMSMarker()
-//        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-//        marker.title = "Sydney"
-//        marker.snippet = "Australia"
-//        marker.map = mapView
-//    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .yellow
-//
-//        locationManager.requestAlwaysAuthorization()
-//        locationManager.startUpdatingLocation()
+
+        self.configureBindings()
 //        self.service.getCities().subscribe(onSuccess: { result in
 //            switch result {
 //            case .success(let cities):
@@ -62,6 +46,15 @@ class MapView: CustomViewController<MapViewScreen> {
 //                ()
 //            }
 //        })
+    }
+
+    func configureBindings() {
+        self.viewModel.location
+            .drive(onNext: { location in
+                let cameraPosition = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 15)
+                self.customView.mapView.camera = cameraPosition
+                print(location)
+            })
     }
 }
 

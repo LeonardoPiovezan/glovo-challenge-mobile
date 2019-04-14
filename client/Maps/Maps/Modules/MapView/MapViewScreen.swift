@@ -8,10 +8,11 @@
 
 import UIKit
 import SnapKit
+import GoogleMaps
 
 final class MapViewScreen: UIView {
-    lazy var mapView: UIView = {
-        return UIView(frame: CGRect.zero)
+    lazy var mapView: GMSMapView = {
+        return GMSMapView(frame: CGRect.zero)
     }()
 
     lazy var cityInfoView: CityInfoView = {
@@ -50,7 +51,5 @@ extension MapViewScreen: CodeView {
     }
 
     func setupAdditionalConfiguration() {
-        self.mapView.backgroundColor = .black
-//        self.infoView.backgroundColor = .purple
     }
 }

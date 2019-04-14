@@ -6,12 +6,30 @@
 //  Copyright © 2019 Leonardo Piovezan. All rights reserved.
 //
 
-import Foundation
+import RxCocoa
+import CoreLocation
 
 final class MapViewModel: MapViewModeling {
-    private let placeService: PlaceService
+    var location: Driver<CLLocation>
 
-    init(placeService: PlaceService) {
+    private let placeService: PlaceService
+    private let geolocationService: GeolocationService
+
+    init(placeService: PlaceService,
+         geolocationService: GeolocationService) {
         self.placeService = placeService
+        self.geolocationService = geolocationService
+        self.location = self.geolocationService.location
+        self.geolocationService.requestAuthorizationFromUser()
+
+        self.placeService
+//        self.geolocationService.autorized.drive(onNext: { isAutorized in
+//            if isAutorized {
+//                self.geolocationService.startUpdatingLocation()
+//            } else {
+//
+//            }
+//        })
+
     }
 }
