@@ -36,7 +36,6 @@
 		1AA98E3D22624BC400F22286 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E3C22624BC400F22286 /* CodeView.swift */; };
 		1AA98E3F226252E000F22286 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E3E226252E000F22286 /* CustomViewController.swift */; };
 		1AA98E41226254DC00F22286 /* MapViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E40226254DC00F22286 /* MapViewModeling.swift */; };
-		1AA98E452262559100F22286 /* DefaultContainer+ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E442262559100F22286 /* DefaultContainer+ViewModels.swift */; };
 		1AA98E4822626D6700F22286 /* InfoLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E4722626D6700F22286 /* InfoLabelView.swift */; };
 		1AA98E4A226286F900F22286 /* MapsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E49226286F900F22286 /* MapsLabel.swift */; };
 		1AA98E4C2262875100F22286 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E4B2262875100F22286 /* Style.swift */; };
@@ -46,6 +45,7 @@
 		1AA98E562262926E00F22286 /* SubtitleDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E552262926E00F22286 /* SubtitleDescriptor.swift */; };
 		1AA98E592262A45D00F22286 /* CityInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E582262A45D00F22286 /* CityInfoView.swift */; };
 		1AA98E5C2262B84700F22286 /* Observable+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E5B2262B84700F22286 /* Observable+Utils.swift */; };
+		1AA98E5F2262CA2000F22286 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA98E5E2262CA2000F22286 /* BaseViewModel.swift */; };
 		69511AF44C6DB325121AF196 /* Pods_MapsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CBE6D8DD2BD5897571B94B /* Pods_MapsUITests.framework */; };
 		9D056CC1F5C5225C03CC4017 /* Pods_Maps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4655AF3C375BEC380B6190C7 /* Pods_Maps.framework */; };
 		A8A64F38CA97F6EE0789E803 /* Pods_MapsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165C6F1820F5504C965A406 /* Pods_MapsTests.framework */; };
@@ -105,7 +105,6 @@
 		1AA98E3C22624BC400F22286 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		1AA98E3E226252E000F22286 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		1AA98E40226254DC00F22286 /* MapViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModeling.swift; sourceTree = "<group>"; };
-		1AA98E442262559100F22286 /* DefaultContainer+ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultContainer+ViewModels.swift"; sourceTree = "<group>"; };
 		1AA98E4722626D6700F22286 /* InfoLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLabelView.swift; sourceTree = "<group>"; };
 		1AA98E49226286F900F22286 /* MapsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsLabel.swift; sourceTree = "<group>"; };
 		1AA98E4B2262875100F22286 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -115,6 +114,7 @@
 		1AA98E552262926E00F22286 /* SubtitleDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleDescriptor.swift; sourceTree = "<group>"; };
 		1AA98E582262A45D00F22286 /* CityInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoView.swift; sourceTree = "<group>"; };
 		1AA98E5B2262B84700F22286 /* Observable+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Utils.swift"; sourceTree = "<group>"; };
+		1AA98E5E2262CA2000F22286 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		3165C6F1820F5504C965A406 /* Pods_MapsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		403D32CDCDCB929E32080D85 /* Pods-MapsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsTests.release.xcconfig"; path = "Target Support Files/Pods-MapsTests/Pods-MapsTests.release.xcconfig"; sourceTree = "<group>"; };
 		4655AF3C375BEC380B6190C7 /* Pods_Maps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +179,7 @@
 		1AA98DD2225A988B00F22286 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				1AA98E5D2262C9FC00F22286 /* Common */,
 				1AA98E5A2262B82B00F22286 /* Extension */,
 				1AA98DD3225A988B00F22286 /* AppDelegate.swift */,
 				1AA98DDA225A988D00F22286 /* Assets.xcassets */,
@@ -251,7 +252,6 @@
 				1AA98E13225AA8A600F22286 /* DefaultContainer+Views.swift */,
 				1AA98E2F225AC43200F22286 /* DefaultContainer+Services.swift */,
 				1AA98E31225AC44200F22286 /* DefaultContainer+Repositories.swift */,
-				1AA98E442262559100F22286 /* DefaultContainer+ViewModels.swift */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -372,6 +372,14 @@
 				1AA98E5B2262B84700F22286 /* Observable+Utils.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		1AA98E5D2262C9FC00F22286 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1AA98E5E2262CA2000F22286 /* BaseViewModel.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		45A8DBF3B3B937FB9C8632A0 /* Frameworks */ = {
@@ -712,9 +720,9 @@
 				1AA98E0B225A9D5D00F22286 /* Coordinator.swift in Sources */,
 				1AA98E2A225AC00700F22286 /* City.swift in Sources */,
 				1AA98E4C2262875100F22286 /* Style.swift in Sources */,
+				1AA98E5F2262CA2000F22286 /* BaseViewModel.swift in Sources */,
 				1AA98DD4225A988B00F22286 /* AppDelegate.swift in Sources */,
 				1AA98E562262926E00F22286 /* SubtitleDescriptor.swift in Sources */,
-				1AA98E452262559100F22286 /* DefaultContainer+ViewModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

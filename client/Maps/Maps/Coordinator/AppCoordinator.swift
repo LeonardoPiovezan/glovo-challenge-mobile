@@ -22,6 +22,11 @@ final class AppCoordinator: Coordinator {
     func start() {
 
         let mapView = self.container.container.resolve(MapView.self)!
+
+        let placeService = self.container.container.resolve(PlaceService.self)!
+        let geolocationService = self.container.container.resolve(GeolocationService.self)!
+        mapView.viewModel = MapViewModel(placeService: placeService,
+                                         geolocationService: geolocationService)
         self.window.rootViewController = mapView
     }
 }

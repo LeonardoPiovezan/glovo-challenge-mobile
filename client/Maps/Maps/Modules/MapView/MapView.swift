@@ -10,17 +10,13 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 import RxCoreLocation
+import RxSwift
 
 class MapView: CustomViewController<MapViewScreen> {
+    var viewModel: MapViewModel!
 
-    private let locationManager: CLLocationManager
-
-    private let viewModel: MapViewModeling
-    init(mapViewModel: MapViewModeling) {
-        self.locationManager = CLLocationManager()
-        self.viewModel = mapViewModel
+    init() {
         super.init(nibName: nil, bundle: nil)
-        self.locationManager.delegate = self
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -49,12 +45,29 @@ class MapView: CustomViewController<MapViewScreen> {
     }
 
     func configureBindings() {
-        self.viewModel.location
-            .drive(onNext: { location in
-                let cameraPosition = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 15)
-                self.customView.mapView.camera = cameraPosition
-                print(location)
+        let subject = PublishSubject<Void>()
+        let trigger = subject.asDriver(onErrorJustReturn: ())
+        let output = self.viewModel.transform(input: MapViewModel.Input(getCitiesTrigger: trigger))
+
+        output.cities.drive(onNext: { cities in
+            print(cities)
+        })
+
+        output.polylines.drive(onNext: { [weak self] polylines in
+            guard let self = self else { return }
+            polylines.forEach({ polyline in
+                polyline.map = self.customView.mapView
             })
+        })
+
+        subject.onNext(())
+
+//        self.viewModel.location
+//            .drive(onNext: { location in
+//                let cameraPosition = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 15)
+//                self.customView.mapView.camera = cameraPosition
+//                print(location)
+//            })
     }
 }
 
