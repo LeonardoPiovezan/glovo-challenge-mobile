@@ -21,6 +21,7 @@ final class MapViewModel: BaseViewModel {
     struct Output {
         let cities: Driver<[City]>
         let polylines: Driver<[GMSPolyline]>
+        let citiesData: Driver<[CityCustomData]>
 //        let fetching: Driver<Bool>
 //        let posts: Driver<[PostItemViewModel]>
 //        let createPost: Driver<Void>
@@ -75,8 +76,18 @@ final class MapViewModel: BaseViewModel {
                 return polyline
             })
         }
-        
+
+        let citiesData = cities.map { cities in
+            return Dictionary(grouping: cities, by: { $0.country_code})
+            }.map { countryDictionary in
+                return countryDictionary.map({ (dictionary) -> CityCustomData in
+                    let (key, value) = dictionary
+                    return CityCustomData(countryName: key, items: value)
+                })
+        }
+
         return Output(cities: cities,
-                      polylines: polylines)
+                      polylines: polylines,
+                      citiesData: citiesData)
     }
 }

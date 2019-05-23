@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.1)
+  - Differentiator (3.1.0)
   - GoogleMaps (3.0.3):
     - GoogleMaps/Maps (= 3.0.3)
   - GoogleMaps/Base (3.0.3)
@@ -20,6 +21,10 @@ PODS:
   - RxCoreLocation/Core (1.3.2):
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
   - RxSwift (4.4.2):
     - RxAtomic (>= 4.4.2, ~> 4.4)
   - SnapKit (4.2.0)
@@ -31,6 +36,7 @@ DEPENDENCIES:
   - Moya/RxSwift
   - RxCocoa
   - RxCoreLocation (~> 1.3.1)
+  - RxDataSources (~> 3.0)
   - RxSwift
   - SnapKit
   - SwiftLint
@@ -39,12 +45,14 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Differentiator
     - GoogleMaps
     - Moya
     - Result
     - RxAtomic
     - RxCocoa
     - RxCoreLocation
+    - RxDataSources
     - RxSwift
     - SnapKit
     - SwiftLint
@@ -52,17 +60,19 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
   RxCoreLocation: 23d0f2f06fba5af57f2fa9064a5c165e75eb4c33
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
 
-PODFILE CHECKSUM: cf4cc9d8fd93d7f2fcc3729083844500fa3c3c21
+PODFILE CHECKSUM: a65d9fc25f390474ae7f144e9632fa260847996b
 
 COCOAPODS: 1.6.1

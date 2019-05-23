@@ -11,6 +11,7 @@ import GoogleMaps
 import CoreLocation
 import RxCoreLocation
 import RxSwift
+import RxDataSources
 
 class MapView: CustomViewController<MapViewScreen> {
     var viewModel: MapViewModel!
@@ -62,6 +63,20 @@ class MapView: CustomViewController<MapViewScreen> {
 
         subject.onNext(())
 
+        let dataSource = RxTableViewSectionedReloadDataSource<CityCustomData> ( configureCell: { datasource, tableView, indexPath, city -> UITableViewCell in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+            cell.textLabel?.text = city.name
+            return cell
+        })
+
+        dataSource.titleForHeaderInSection = { datasource, index in
+            return dataSource.sectionModels[index].countryName
+        }
+
+        output.citiesData.drive(
+            self.customView.citiesTableView.rx.items(dataSource: dataSource)
+        )
+//        self.customView.citiesTableView.rx.items(<#T##source: ObservableType##ObservableType#>)
 //        self.viewModel.location
 //            .drive(onNext: { location in
 //                let cameraPosition = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 15)
@@ -84,5 +99,18 @@ extension MapView: CLLocationManagerDelegate {
 //        let market = GMSMarker(position: location.coordinate)
 //        market.title = "Narutinho"
 //        market.map = self.mapView
+    }
+}
+
+
+struct CityCustomData {
+    var countryName: String
+    var items: [City]
+}
+
+extension CityCustomData: SectionModelType {
+    init(original: CityCustomData, items: [City]) {
+        self = original
+        self.items = items
     }
 }

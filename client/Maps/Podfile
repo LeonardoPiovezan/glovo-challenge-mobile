@@ -14,7 +14,7 @@ target 'Maps' do
   pod 'SwiftLint'
   pod 'GoogleMaps'
   pod 'RxCoreLocation', '~> 1.3.1'
-  
+  pod 'RxDataSources', '~> 3.0'
   target 'MapsTests' do
     inherit! :search_paths
     # Pods for testing

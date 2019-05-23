@@ -19,6 +19,10 @@ final class MapViewScreen: UIView {
         return CityInfoView()
     }()
 
+    lazy var citiesTableView: UITableView = {
+        return UITableView(frame: CGRect.zero, style: UITableView.Style.grouped)
+    }()
+
     init() {
         super.init(frame: CGRect.zero)
         self.setupView()
@@ -33,6 +37,7 @@ extension MapViewScreen: CodeView {
     func buildViewHierarchy() {
         self.addSubview(self.mapView)
         self.addSubview(self.cityInfoView)
+        self.addSubview(self.citiesTableView)
     }
 
     func setupConstraints() {
@@ -48,8 +53,16 @@ extension MapViewScreen: CodeView {
             make.trailing.equalToSuperview()
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
+
+        self.citiesTableView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
+        }
     }
 
     func setupAdditionalConfiguration() {
+        self.citiesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
 }
